@@ -1,14 +1,13 @@
 package bhz.com.dao;
 
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-
+import com.alibaba.fastjson.JSONException;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.JdbcUtils;
 
-import com.alibaba.fastjson.JSONException;
-import com.alibaba.fastjson.JSONObject;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 
 /**
  * <B>系统名称：</B>通用系统功能<BR>
@@ -32,6 +31,7 @@ public class JsonRowMapper implements RowMapper<JSONObject> {
      * @see org.springframework.jdbc.core.RowMapper#mapRow(java.sql.ResultSet,
      *      int)
      */
+    @Override
     public JSONObject mapRow(ResultSet rs, int row) throws SQLException {
         String key = null;
         Object obj = null;
