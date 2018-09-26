@@ -18,6 +18,7 @@ public class test {
         Date d = c.getTime();
         String first = format.format(d);
         System.out.println("===============first:"+first);
+
     }
 
 
