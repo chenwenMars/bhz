@@ -19,6 +19,7 @@ public class test {
         String first = format.format(d);
         System.out.println("===============first:"+first);
 
+        System.out.println("args = [" + args.length + "]");
     }
 
 
