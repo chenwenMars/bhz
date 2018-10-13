@@ -41,7 +41,7 @@
 		<pluginManagement>
 			<plugins>
 				<!-- 解决Maven插件在Eclipse内执行了一系列的生命周期引起冲突 -->
-				<plugin>
+				<!--<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
 					<version>1.0.0</version>
@@ -64,7 +64,7 @@
 							</pluginExecutions>
 						</lifecycleMappingMetadata>
 					</configuration>
-				</plugin>
+				</plugin>-->
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -101,7 +101,7 @@
 						<configuration>
 							<type>jar</type>
 							<includeTypes>jar</includeTypes>
-							<useUniqueVersions>false</useUniqueVersions>
+							<!--<useUniqueVersions>false</useUniqueVersions>-->
 							<outputDirectory>
 								${project.build.directory}/lib
 							</outputDirectory>
