@@ -13,8 +13,9 @@ public class Consumer {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 				new String[] { "dubbo-consumer.xml" });
 		context.start();
-		SysUserFacade sf = (SysUserFacade) context.getBean("sysUserService");
-		
+//		SysUserFacade sf = (SysUserFacade) context.getBean("sysUserService");
+		SysUserFacade sf = (SysUserFacade) context.getBean("sysUserFacade");
+
 		System.out.println(sf);
 		SysUser user = sf.getUser();
 		System.out.println(user.getName());
