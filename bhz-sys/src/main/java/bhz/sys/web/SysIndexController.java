@@ -1,6 +1,5 @@
 package bhz.sys.web;
 
-import bhz.sys.entity.SysUser;
 import bhz.sys.facade.SysUserFacade;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,9 +34,9 @@ public class SysIndexController {
     @RequestMapping("/sysindex.html")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView ret = new ModelAndView();
-        SysUser user = this.sysUserFacade.getUser();
-        System.out.println(user);
-        
+//        SysUser user = this.sysUserFacade.getUser();
+//        System.out.println(user);
+        System.out.println("aaaa");
         return ret;
     }
     
