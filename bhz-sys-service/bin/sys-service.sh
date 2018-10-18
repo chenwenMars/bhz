@@ -1,13 +1,13 @@
 #!/bin/sh
 ## java env
-export JAVA_HOME=/usr/local/jdk1.7
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home
 export JRE_HOME=$JAVA_HOME/jre
 
 ## exec shell name
 EXEC_SHELL_NAME=sys-service\.sh
 ## service name
 SERVICE_NAME=bhz-sys-service
-SERVICE_DIR=/usr/local/workspace/sys-service
+SERVICE_DIR=/Users/PC/edu/service/sys-service
 JAR_NAME=$SERVICE_NAME\.jar
 PID=$SERVICE_NAME\.pid
 

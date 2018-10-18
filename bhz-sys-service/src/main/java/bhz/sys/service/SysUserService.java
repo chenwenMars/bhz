@@ -1,17 +1,19 @@
 package bhz.sys.service;
 
-import bhz.sys.dao.SysUserDao;
-import bhz.sys.facade.SysUserFacade;
-import com.alibaba.fastjson.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import bhz.sys.dao.SysUserDao;
+import bhz.sys.facade.SysUserFacade;
+
+import com.alibaba.fastjson.JSONObject;
+
 
 @Service("sysUserService")
-@com.alibaba.dubbo.config.annotation.Service(interfaceClass= SysUserFacade.class, protocol = {"rest", "dubbo"})
+@com.alibaba.dubbo.config.annotation.Service(interfaceClass=bhz.sys.facade.SysUserFacade.class, protocol = {"rest", "dubbo"})
 public class SysUserService implements SysUserFacade {
 
 	@Autowired

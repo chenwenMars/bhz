@@ -97,8 +97,8 @@ public class Encrypt {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(md5("123456"));
-		System.out.println(sha("123456"));
+		System.out.println(md5("xiaoxiao"));
+		System.out.println(sha("xiaoxiao"));
 	}
 
 

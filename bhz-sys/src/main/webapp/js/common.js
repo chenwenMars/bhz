@@ -391,13 +391,13 @@ function showUploadWindow(url, params, func) {
 
 //CommonComponents create
 
-Ext.ns("Bjsxt", "Bjsxt.extjs", "Bjsxt.extjs.field");
+Ext.ns("Bhz", "Bhz.extjs", "Bhz.extjs.field");
 Ext.QuickTips.init();
 
 
-Ext.define("Bjsxt.extjs.field.DefaultComboBox", {
+Ext.define("Bhz.extjs.field.DefaultComboBox", {
 
-    alias : "widget.bjsxt_combo",
+    alias : "widget.bhz_combo",
 
     extend : "Ext.form.field.ComboBox",
 
@@ -429,11 +429,11 @@ Ext.define("Bjsxt.extjs.field.DefaultComboBox", {
     }
 });
 
-Ext.define("Bjsxt.extjs.field.Year", {
+Ext.define("Bhz.extjs.field.Year", {
 
-    alias : "widget.bjsxt_year",
+    alias : "widget.Bhz_year",
 
-    extend : "Bjsxt.extjs.field.DefaultComboBox",
+    extend : "Bhz.extjs.field.DefaultComboBox",
 
     constructor : function(config) {
 
@@ -492,11 +492,11 @@ Ext.define("Bjsxt.extjs.field.Year", {
     }
 });
 
-Ext.define("Bjsxt.extjs.field.Season", {
+Ext.define("Bhz.extjs.field.Season", {
 
-    alias : "widget.bjsxt_season",
+    alias : "widget.Bhz_season",
 
-    extend : "Bjsxt.extjs.field.DefaultComboBox",
+    extend : "Bhz.extjs.field.DefaultComboBox",
 
     constructor : function(config) {
 
@@ -561,11 +561,11 @@ Ext.define("Bjsxt.extjs.field.Season", {
     }
 });
 
-Ext.define("Bjsxt.extjs.field.Month", {
+Ext.define("Bhz.extjs.field.Month", {
 
-    alias : "widget.bjsxt_month",
+    alias : "widget.Bhz_month",
 
-    extend : "Bjsxt.extjs.field.DefaultComboBox",
+    extend : "Bhz.extjs.field.DefaultComboBox",
 
     constructor : function(config) {
 
@@ -620,11 +620,11 @@ Ext.define("Bjsxt.extjs.field.Month", {
     }
 });
 
-Ext.define("Bjsxt.extjs.field.Check", {
+Ext.define("Bhz.extjs.field.Check", {
 
-    alias : "widget.bjsxt_check",
+    alias : "widget.Bhz_check",
 
-    extend : "Bjsxt.extjs.field.DefaultComboBox",
+    extend : "Bhz.extjs.field.DefaultComboBox",
 
     constructor : function(config) {
 
@@ -680,9 +680,9 @@ Ext.define("Bjsxt.extjs.field.Check", {
     }
 });
 
-Ext.define("Bjsxt.extjs.field.PageBar", {
+Ext.define("Bhz.extjs.field.PageBar", {
 
-    alias : "widget.bjsxt_page",
+    alias : "widget.Bhz_page",
 
     extend : "Ext.toolbar.Paging",
 
@@ -698,7 +698,7 @@ Ext.define("Bjsxt.extjs.field.PageBar", {
             dataStore.pageSize = defaultPageSize;
         }
 
-        var pageCombo = Ext.create("Bjsxt.extjs.field.DefaultComboBox", {
+        var pageCombo = Ext.create("Bhz.extjs.field.DefaultComboBox", {
             store : Ext.create("Ext.data.SimpleStore", {
                 fields : [ "page" ],
                 data : [ [ 10 ], [ 20 ], [ 50 ], [ 100 ], [ 150 ], [ 200 ] ]
@@ -733,11 +733,11 @@ Ext.define("Bjsxt.extjs.field.PageBar", {
 });
 
 
-Ext.define("Bjsxt.extjs.field.MstCode", {
+Ext.define("Bhz.extjs.field.MstCode", {
 
-    alias : "widget.bjsxt_mstcode",
+    alias : "widget.Bhz_mstcode",
 
-    extend : "Bjsxt.extjs.field.DefaultComboBox",
+    extend : "Bhz.extjs.field.DefaultComboBox",
 
     constructor : function(config) {
 
@@ -805,9 +805,9 @@ Ext.define("Bjsxt.extjs.field.MstCode", {
 
 
 
-Ext.define("Bjsxt.extjs.field.Files", {
+Ext.define("Bhz.extjs.field.Files", {
 
-    alias : "widget.bjsxt_files",
+    alias : "widget.Bhz_files",
 
     extend : "Ext.form.FieldContainer",
 
@@ -849,7 +849,7 @@ Ext.define("Bjsxt.extjs.field.Files", {
         var pct = Math.ceil(2400 / (width - lwidth));
 
         var store = Ext.create("Ext.data.JsonStore", {
-            fields : [ "key", "name", "type", "bytes", "expired" ],
+            fields : [ "key", "name", "type", "bytes", "dataPath", "dataGroup", "expired" ],
             proxy : {
                 type : "ajax",
                 url : "comm/file/list.json"
@@ -914,6 +914,8 @@ Ext.define("Bjsxt.extjs.field.Files", {
                             type : ret.type,
                             name : ret.name,
                             bytes : ret.bytes,
+                            dataPath: ret.dataPath,
+                            dataGroup: ret.dataGroup,
                             expired : ret.expired
                         });
                     });
@@ -959,8 +961,8 @@ Ext.define("Bjsxt.extjs.field.Files", {
                     } else {
                         size = "";
                     }
-                    var ret = "<a href='comm/file/get.json?key=" + rec.get("key");
-                    ret = ret + "&inline=" + me.inline + "'";
+                    var ret = "<a href='" + rec.get("dataPath");
+                    ret = ret  + "'";
                     if (me.inline) {
                         ret = ret + " target='blank'";
                     }
@@ -1021,11 +1023,11 @@ Ext.define("Bjsxt.extjs.field.Files", {
 });
 
 //baseGrid
-Ext.define('Bjsxt.extjs.grid.BaseGrid',{
+Ext.define('Bhz.extjs.grid.BaseGrid',{
     
     extend: 'Ext.grid.Panel',
     
-    alias: "widget.bjsxt_basegrid",
+    alias: "widget.Bhz_basegrid",
     
     fields: [],                 //is required
     
@@ -1063,7 +1065,7 @@ Ext.define('Bjsxt.extjs.grid.BaseGrid',{
         if(me.storeHasPaging) {
         	
             me.dockedItems = [];
-            paging = Ext.create('Bjsxt.extjs.field.PageBar',{
+            paging = Ext.create('Bhz.extjs.field.PageBar',{
                   id : "pageBar",
                   store : me.store ,
                   dock:'bottom' , 

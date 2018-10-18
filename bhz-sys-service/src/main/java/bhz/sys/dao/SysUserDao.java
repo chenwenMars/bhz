@@ -1,10 +1,12 @@
 package bhz.sys.dao;
 
-import bhz.com.dao.BaseJdbcDao;
-import com.alibaba.fastjson.JSONObject;
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import bhz.com.dao.BaseJdbcDao;
+
+import com.alibaba.fastjson.JSONObject;
 
 @Repository("sysUserDao")
 public class SysUserDao extends BaseJdbcDao {

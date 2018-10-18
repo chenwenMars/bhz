@@ -30,8 +30,6 @@ import com.alibaba.fastjson.JSONObject;
  * <B>中文类名：</B>基础数据访问<BR>
  * <B>概要说明：</B><BR>
  * 
- * @author 交通运输部规划研究院（bhz）
- * @since 2013-10-28
  */
 
 public class BaseJdbcDao {
